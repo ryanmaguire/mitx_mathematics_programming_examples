@@ -83,7 +83,7 @@ MODULE HERON
                 EXIT
             END IF
 
-            ! Otherwise, improve our approximation using Heron's formula.
+            ! Otherwise, improve our approximation using Heron's method.
             APPROXIMATE_ROOT = 0.5 * (APPROXIMATE_ROOT + X / APPROXIMATE_ROOT)
         END DO
 
