@@ -86,7 +86,7 @@ int main(void)
     /*  Calculate the square root and print it to the screen. If we have      *
      *  written things correctly, we should get 1.414..., which is sqrt(2).   */
     const double sqrt_x = herons_method(x);
-    printf("sqrt(%.1F) = %.16F\n", x, sqrt_x);
+    printf("sqrt(%.1f) = %.16f\n", x, sqrt_x);
 
     return 0;
 }
