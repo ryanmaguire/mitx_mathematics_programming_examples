@@ -98,7 +98,7 @@ static double bisection_method(function f, double a, double b)
         right = a;
     }
 
-    /*  Start the bisection method. Compute the midpoint of left and right.   */
+    /*  Start the bisection method. Compute the midpoint of a and b.          */
     midpoint = 0.5 * (a + b);
 
     /*  Iteratively divide the range in half to find the root.                */
