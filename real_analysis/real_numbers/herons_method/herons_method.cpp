@@ -24,7 +24,7 @@
  *  Date:   2025/03/08                                                        *
  ******************************************************************************/
 
-/*  stdio.h provides the "printf" function, used for printing text.           */
+/*  stdio provides the "printf" function, used for printing text.             */
 #include <cstdio>
 
 /*  Floating-point absolute value function, fabs, provided here.              */
