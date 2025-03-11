@@ -75,6 +75,6 @@ function herons_method(x)
 end
 
 # Test out our implementation by computing the square root of 2.
-x = 2.0;
-sqrt_x = herons_method(x);
-println("sqrt(", x, ") = ", sqrt_x);
+x = 2.0
+sqrt_x = herons_method(x)
+println("sqrt(", x, ") = ", sqrt_x)

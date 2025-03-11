@@ -69,7 +69,7 @@ function approximate_root = herons_method(x)
 
 end
 
-# Test out our implementation by computing the square root of 2.
+% Test out our implementation by computing the square root of 2.
 x = 2.0;
 sqrt_x = herons_method(x);
 printf("sqrt(%.1f) = %.16f\n", x, sqrt_x);
