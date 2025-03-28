@@ -68,7 +68,7 @@ static double bisection_method(function f, double a, double b)
     if (a_eval == 0.0)
         return a;
 
-    /*  Similarly, if f(b) = b, then we have already found the root. Return b.*/
+    /*  Similarly, if f(b) = 0, then we have already found the root. Return b.*/
     if (b_eval == 0.0)
         return b;
 
