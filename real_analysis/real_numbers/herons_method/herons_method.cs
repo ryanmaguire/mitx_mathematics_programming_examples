@@ -28,8 +28,8 @@
 using System;
 
 /*  Class providing an implementation of Heron's method.                      */
-class Heron
-{
+class Heron {
+
     /*  Heron's method is iterative and the convergence is quadratic. This    *
      *  means that if a_{n} has N correct decimals, then a_{n+1} will have    *
      *  2N correct decimals. A standard 64-bit double can fit about 16        *
