@@ -112,7 +112,7 @@ class Bisection {
                  *  break out of this for loop. Check for this.               */
                 const double eval = f(midpoint);
 
-                if (fabs(eval) <= epsilon)
+                if (std::fabs(eval) <= epsilon)
                     break;
 
                 /*  Apply bisection to get a better approximation. We have    *
