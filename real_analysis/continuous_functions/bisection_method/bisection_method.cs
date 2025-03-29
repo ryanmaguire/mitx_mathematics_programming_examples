@@ -43,7 +43,7 @@ class Bisection {
     const double epsilon = 2.220446049250313E-16;
 
     /*  Computes the root of a function using the bisection method.           */
-    static double root(function f, double a, double b)
+    static double Root(function f, double a, double b)
     {
         /*  Variable for keeping track of the number of iterations.           */
         uint iters;
@@ -144,7 +144,7 @@ class Bisection {
 
         /*  Compute pi using bisection. We should get pi = 3.14159...,        *
          *  accurate to about 16 decimals.                                    */
-        double pi = root(Math.Sin, a, b);
+        double pi = Root(Math.Sin, a, b);
         Console.WriteLine($"pi = {pi}");
     }
 }
