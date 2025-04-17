@@ -141,4 +141,3 @@ let b: Double = 4.0
  *  to about 16 decimals.                                                     */
 let pi: Double = bisectionMethod(f: sin, a: a, b: b)
 print("pi = \(pi)")
-
