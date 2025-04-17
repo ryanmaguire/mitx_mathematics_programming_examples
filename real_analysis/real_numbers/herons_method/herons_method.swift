@@ -32,39 +32,39 @@ import Foundation
  *  decimals. A standard 64-bit double can fit about 16 decimals of precision *
  *  (the exact value is 2^-52 ~= 2.22x10^-16). Because of this we may exit    *
  *  the function after a few iterations.                                      */
-let maximum_number_of_iterations: UInt32 = 16;
+let maximum_number_of_iterations: UInt32 = 16
 
 /*  The maximum allowed error. This is double precision epsilon.              */
-let epsilon: Double = 2.220446049250313E-16;
+let epsilon: Double = 2.220446049250313E-16
 
 /*  Function for computing square roots using Heron's method.                 */
 func heronsMethod(x: Double) -> Double {
 
     /*  Starting value for Heron's method. The input will suffice.            */
-    var approximate_root: Double = x;
+    var approximate_root: Double = x
 
     /*  Loop through and iteratively perform Heron's method.                  */
     for _ in 0 ..< maximum_number_of_iterations {
 
         /*  If the error is small enough we can break out of the loop. We     *
          *  want small relative error, so compute this.                       */
-        let error: Double = (x - approximate_root * approximate_root) / x;
+        let error: Double = (x - approximate_root * approximate_root) / x
 
         if fabs(error) <= epsilon {
-            break;
+            break
         }
 
         /*  Otherwise improve the error by applying Heron's method.           */
-        approximate_root = 0.5 * (approximate_root + x / approximate_root);
+        approximate_root = 0.5 * (approximate_root + x / approximate_root)
     }
 
     /*  As long as x is positive and not very large, we should have a very    *
      *  good approximation for sqrt(x). Heron's method works for large x, but *
      *  we may need to increasethe value of maximum_number_of_iterations.     */
-    return approximate_root;
+    return approximate_root
 }
 
 /*  Test out Heron's method by computing sqrt(2).                             */
-let x: Double = 2.0;
-let sqrt_x: Double = heronsMethod(x: x);
-print("sqrt(\(x)) = \(sqrt_x)");
+let x: Double = 2.0
+let sqrt_x: Double = heronsMethod(x: x)
+print("sqrt(\(x)) = \(sqrt_x)")
