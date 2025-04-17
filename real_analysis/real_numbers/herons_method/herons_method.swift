@@ -50,7 +50,7 @@ func heronsMethod(x: Double) -> Double {
          *  want small relative error, so compute this.                       */
         let error: Double = (x - approximate_root * approximate_root) / x;
 
-        if (fabs(error) <= epsilon) {
+        if fabs(error) <= epsilon {
             break;
         }
 
