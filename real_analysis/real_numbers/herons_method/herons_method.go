@@ -49,14 +49,14 @@ func herons_method(x float64) float64 {
 
     /*  Set the initial guess to the input. Provided x is positive, Heron's   *
      *  method will indeed converge.                                          */
-    var approximate_root float64 = x
+    var approximate_root = x
 
     /*  Iteratively loop through and obtain better approximations for sqrt(x).*/
     for iters = 0; iters < maximum_number_of_iterations; iters += 1 {
 
         /*  If we are within epsilon of the correct value we may break out of *
          *  this for-loop. Use the absolute value function to check.          */
-        var error float64 = (x - approximate_root * approximate_root) / x
+        var error = (x - approximate_root * approximate_root) / x
 
         if math.Abs(error) <= epsilon {
             break
@@ -82,6 +82,6 @@ func main() {
 
     /*  Calculate the square root and print it to the screen. If we have      *
      *  written things correctly, we should get 1.414..., which is sqrt(2).   */
-    var sqrt_x float64 = herons_method(x)
+    var sqrt_x = herons_method(x)
     fmt.Printf("sqrt(%.1f) = %.16f\n", x, sqrt_x)
 }
