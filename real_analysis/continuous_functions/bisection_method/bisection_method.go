@@ -40,7 +40,7 @@ func bisection_method(f realfunc, a float64, b float64) float64 {
 
     /*  Tell the algorithm to stop after several iterations to avoid an       *
      *  infinite loop. Double precision numbers have 52 bits in the mantissa, *
-     *  mean if |b - a| ~= 1, after 52 iterations of bisection we will get as *
+     *  so if |b - a| ~= 1, after 52 iterations of bisection we will get as   *
      *  close as we can to the root. To allow for |b - a| to be larger, halt  *
      *  the algorithm after at most 64 steps.                                 */
     const maximum_number_of_iterations uint32 = 64

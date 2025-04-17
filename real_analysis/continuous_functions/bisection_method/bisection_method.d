@@ -35,7 +35,7 @@ static double bisection_method(realfunc f, double a, double b)
 
     /*  Tell the algorithm to stop after several iterations to avoid an       *
      *  infinite loop. Double precision numbers have 52 bits in the mantissa, *
-     *  mean if |b - a| ~= 1, after 52 iterations of bisection we will get as *
+     *  so if |b - a| ~= 1, after 52 iterations of bisection we will get as   *
      *  close as we can to the root. To allow for |b - a| to be larger, halt  *
      *  the algorithm after at most 64 steps.                                 */
     const uint maximum_number_of_iterations = 64U;
