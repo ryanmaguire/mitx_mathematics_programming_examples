@@ -58,12 +58,12 @@ func bisection_method(f realfunc, a float64, b float64) float64 {
     /*  We do not require a < b, nor do we require f(a) < f(b). We only need  *
      *  one of these to evaluate to a negative under f and one to evaluate to *
      *  positive. We will call the negative entry left and positive one right.*/
-    var left, right float64;
+    var left, right float64
 
     /*  Evaluate f at the two endpoints to determine which is positive and    *
      *  which is negative. We transform [a, b] to [left, right] by doing this.*/
-    var a_eval float64 = f(a)
-    var b_eval float64 = f(b)
+    var a_eval = f(a)
+    var b_eval = f(b)
 
     /*  Rare case, f(a) = 0. Return a, no bisection needed.                   */
     if a_eval == 0.0 {
@@ -109,26 +109,26 @@ func bisection_method(f realfunc, a float64, b float64) float64 {
 
         /*  If f(x) is very small, we are close to a root and can break out   *
          *  of this for loop. Check for this.                                 */
-        var eval float64 = f(midpoint)
+        var eval = f(midpoint)
 
         if math.Abs(eval) <= epsilon {
-            break;
+            break
         }
 
         /*  Apply bisection to get a better approximation for the root. We    *
          *  have f(left) < 0 < f(right). If f(midpoint) < 0, replace the      *
          *  interval [left, right] with [midpoint, right]. Set left to the    *
          *  midpoint and reset the midpoint to be closer to right.            */
-        if (eval < 0.0) {
-            left = midpoint;
-            midpoint = 0.5 * (midpoint + right);
+        if eval < 0.0 {
+            left = midpoint
+            midpoint = 0.5 * (midpoint + right)
 
         /*  In the other case, f(midpoint) > 0, we replace right with the     *
          *  midpoint, changing [left, right] into [left, midpoint]. We then   *
          *  set the midpoint to be closer to left.                            */
         } else {
-            right = midpoint;
-            midpoint = 0.5 * (left + midpoint);
+            right = midpoint
+            midpoint = 0.5 * (left + midpoint)
         }
     }
 
@@ -148,6 +148,6 @@ func main() {
 
     /*  Compute pi using bisection. We should get pi = 3.14159..., accurate   *
      *  to about 16 decimals.                                                 */
-    var pi float64 = bisection_method(math.Sin, a, b)
+    var pi = bisection_method(math.Sin, a, b)
     fmt.Printf("pi = %.16f\n", pi)
 }
