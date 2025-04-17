@@ -21,7 +21,7 @@
  *      Calculates the root of a function using bisection.                    *
  ******************************************************************************
  *  Author: Ryan Maguire                                                      *
- *  Date:   2025/03/28                                                        *
+ *  Date:   2025/04/17                                                        *
  ******************************************************************************/
 
 /*  Function pointer notation is a little confusing. Create a typedef for it  *
