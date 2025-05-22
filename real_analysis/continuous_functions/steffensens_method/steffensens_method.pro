@@ -36,8 +36,8 @@ FUNCTION STEFFENSEN, F, X
     ; this we can halt the algorithm after a few steps.
     MAXIMUM_NUMBER_OF_ITERATIONS = 16
 
-    ; Maximum allowed error. This is double precision epsilon.
-    EPSILON = 2.220446049250313E-16
+    ; Maximum allowed error. This is 4x double precision epsilon.
+    EPSILON = 8.881784197001252e-16
 
     ; Variable used for Steffensen's approximation. We will iteratively update
     ; this value with better approximations using Steffensen's method.

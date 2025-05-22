@@ -41,8 +41,8 @@ static double steffensens_method(function f, double x)
      *  Because of this we may exit the function after a few iterations.      */
     const unsigned int maximum_number_of_iterations = 16U;
 
-    /*  The maximum allowed error. This is double precision epsilon.          */
-    const double epsilon = 2.220446049250313E-16;
+    /*  The maximum allowed error. This is 4x double precision epsilon.       */
+    const double epsilon = 8.881784197001252e-16;
 
     /*  Variable for keeping track of how many iterations we have performed.  */
     unsigned int iters;
