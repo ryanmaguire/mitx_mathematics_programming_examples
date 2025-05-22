@@ -42,7 +42,7 @@ func steffensens_method(f realfunc, x float64) float64 {
     const maximum_number_of_iterations uint32 = 16
 
     /*  The maximum allowed error. This is 4x double precision epsilon.       */
-    const epsilon float64 = 8.881784197001252e-16
+    const epsilon float64 = 8.881784197001252E-16
 
     /*  Variable for keeping track of how many iterations we have performed.  */
     var iters uint32

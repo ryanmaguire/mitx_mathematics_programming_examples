@@ -42,7 +42,7 @@ static double steffensens_method(function f, double x)
     const unsigned int maximum_number_of_iterations = 16U;
 
     /*  The maximum allowed error. This is 4x double precision epsilon.       */
-    const double epsilon = 8.881784197001252e-16;
+    const double epsilon = 8.881784197001252E-16;
 
     /*  Variable for keeping track of how many iterations we have performed.  */
     unsigned int iters;

@@ -48,7 +48,7 @@ class Steffensen {
         static double root(function f, double x)
         {
             /*  Maximum allowed error. This is 4x double precision epsilon.   */
-            const double epsilon = 8.881784197001252e-16;
+            const double epsilon = 8.881784197001252E-16;
 
             /*  Variable keeping track of how many iterations we perform.     */
             unsigned int iters;

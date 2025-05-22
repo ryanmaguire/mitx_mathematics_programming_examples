@@ -38,7 +38,7 @@ class Steffensen {
     const uint maximumNumberOfIterations = 16U;
 
     /*  The maximum allowed error. This is 4x double precision epsilon.       */
-    const double epsilon = 8.881784197001252e-16;
+    const double epsilon = 8.881784197001252E-16;
 
     /*  Computes the root of a function using Steffensen's method.            */
     static double Root(function f, double x)
