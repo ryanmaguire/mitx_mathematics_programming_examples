@@ -34,7 +34,7 @@
  *  so we do not need to explicitly use it later.                             */
 typedef double (*function)(double);
 
-/*  Computes the root of a function using Steffensen's method method.         */
+/*  Computes the root of a function using Steffensen's method.                */
 static double steffensens_method(function f, double x)
 {
     /*  Steffensen's method is iterative and converges very quickly.          *
