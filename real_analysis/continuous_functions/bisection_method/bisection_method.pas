@@ -25,7 +25,7 @@
  ******************************************************************************)
 PROGRAM Bisection;
 
-(*  We define two constants: The allowed tolerance (or epsilone value),       *
+(*  We define two constants: The allowed tolerance (or epsilon value),        *
  *  and the maximum number of iterations we allow for the bisection method.   *)
 CONST
 
