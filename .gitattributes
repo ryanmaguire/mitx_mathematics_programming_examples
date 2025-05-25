@@ -5,3 +5,4 @@
 *.pro linguist-language=IDL
 *.objc.m linguist-language=objc
 *.matlab.m linguist-language=octave
+*.c3 linguist-language=C3
