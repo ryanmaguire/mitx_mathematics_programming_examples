@@ -98,7 +98,7 @@ function bisection(f, a, b)
     # Start the bisection method. Compute the midpoint of a and b.
     midpoint = 0.5 * (a + b)
 
-    # Iteratively apply Heron's method.
+    # Iteratively apply the bisection method.
     for _ = 1:maximum_number_of_iterations
 
         # If f(x) is very small, we are close to a root and can break out

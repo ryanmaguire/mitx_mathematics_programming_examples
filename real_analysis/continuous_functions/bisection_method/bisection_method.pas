@@ -181,7 +181,7 @@ BEGIN
     Finished:
 END;
 
-(*  Program for testing our implementation of Heron's method.                 *)
+(*  Program for testing our implementation of the bisection method.           *)
 BEGIN
 
     (*  Pi is between 2 and 4 and is a root to sine.                          *)
