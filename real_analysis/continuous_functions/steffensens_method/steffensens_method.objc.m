@@ -21,7 +21,7 @@
  *      Calculates the root of a function using Steffensen's method.          *
  ******************************************************************************
  *  Author: Ryan Maguire                                                      *
- *  Date:   2025/04/17                                                        *
+ *  Date:   2025/05/25                                                        *
  ******************************************************************************/
 
 /*  NSObject, base class for all Objective-C classes, found here. math.h and  *
