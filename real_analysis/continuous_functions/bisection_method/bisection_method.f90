@@ -32,7 +32,7 @@ MODULE BISECTION
     ! precision number has 52 bits in the mantissa, meaning if |b - a| ~= 1,
     ! then after 52 iterations we are as close to the root as we can get.
     ! To allow for a larger range, halt the algorithm after 64 iterations.
-    INTEGER :: MAXIMUM_NUMBER_OF_ITERATIONS = 16
+    INTEGER :: MAXIMUM_NUMBER_OF_ITERATIONS = 64
 
     ! Maximum allowed error. This is double precision epsilon.
     REAL :: EPSILON = 2.220446049250313E-16
