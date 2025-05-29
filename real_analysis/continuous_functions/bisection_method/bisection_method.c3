@@ -145,7 +145,7 @@ fn double bisection_method(RealFunc f, double a, double b)
 
 /*  math::sin is a macro, which we cannot take the address of. C3 allows      *
  *  linking with the C standard library, including libm. Tell the compiler    *
- *  about the C routine so that we may call it from out main function.        */
+ *  about the C routine so that we may call it from our main function.        */
 extern fn double sin(double x) @extern("sin");
 
 /*  Main routine used for testing our implementation of the bisection method. */
