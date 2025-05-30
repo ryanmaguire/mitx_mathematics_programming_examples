@@ -96,7 +96,7 @@ fn bisection_method(f: RealFunc, a: f64, b: f64) -> f64 {
     midpoint = 0.5 * (a + b);
 
     /*  Iteratively divide the range in half to find the root.                */
-    for _ in 0 .. MAXIMUM_NUMBER_OF_ITERATIONS - 1 {
+    for _ in 0 .. MAXIMUM_NUMBER_OF_ITERATIONS {
 
         /*  If f(x) is very small, we are close to a root and can break out   *
          *  of this for loop. Check for this.                                 */

@@ -42,7 +42,7 @@ fn herons_method(x: f64) -> f64 {
     let mut approximate_root: f64 = x;
 
     /*  Iteratively loop through and obtain better approximations for sqrt(x).*/
-    for _ in 0 .. MAXIMUM_NUMBER_OF_ITERATIONS - 1 {
+    for _ in 0 .. MAXIMUM_NUMBER_OF_ITERATIONS {
 
         /*  If we are within epsilon of the correct value we may break out of *
          *  this for-loop. Use the absolute value function to check.          */

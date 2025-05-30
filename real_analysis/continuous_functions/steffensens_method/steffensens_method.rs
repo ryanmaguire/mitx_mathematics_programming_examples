@@ -41,7 +41,7 @@ fn steffensens_method(f: RealFunc, x: f64) -> f64 {
     let mut xn: f64 = x;
 
     /*  Iteratively apply Steffensen's method to find the root.               */
-    for _ in 0 .. MAXIMUM_NUMBER_OF_ITERATIONS - 1 {
+    for _ in 0 .. MAXIMUM_NUMBER_OF_ITERATIONS {
 
         /*  Steffensen's method needs the evaluations f(x) and f(x + f(x)),   *
          *  in particular the denominator is f(x + f(x)) / f(x) - 1. Compute. */
