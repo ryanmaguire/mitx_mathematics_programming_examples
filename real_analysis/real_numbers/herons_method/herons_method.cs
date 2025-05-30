@@ -42,8 +42,8 @@ class Heron {
      *      constants in C#. It simply means unsigned.                        */
     const uint maximumNumberOfIterations = 16U;
 
-    /*  The maximum allowed error. This is double precision epsilon.          */
-    const double epsilon = 2.220446049250313E-16;
+    /*  The maximum allowed error. This is 4x double precision epsilon.       */
+    const double epsilon = 8.881784197001252E-16;
 
     /*  Computes square roots using Heron's method.                           */
     static double HeronsMethod(double x)
@@ -85,3 +85,15 @@ class Heron {
         Console.WriteLine($"sqrt({x}) = {sqrtX}");
     }
 }
+
+/*  On Windows you can use Microsoft's C# compiler. Type:                     *
+ *      csc herons_method.cs -out:main.exe                                    *
+ *      main.exe                                                              *
+ *  This will output:                                                         *
+ *      sqrt(2) = 1.41421356237309                                            *
+ *  This has a relative error of 1.570092458683775E-16.                       *
+ *                                                                            *
+ *  On GNU, Linux, FreeBSD, macOS, etc., you can use the mono C# compiler:    *
+ *      mcs herons_method.cs -out:main                                        *
+ *      ./main                                                                *
+ *  This produces the same result.                                            */
