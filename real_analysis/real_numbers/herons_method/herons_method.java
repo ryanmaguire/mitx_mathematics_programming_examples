@@ -80,7 +80,6 @@ final public class Heron {
 /*  We can execute this on GNU, Linux, FreeBSD, macOS, Windows, etc., using   *
  *  OpenJDK. After installing, type:                                          *
  *      java herons_method.java                                               *
- *      ./main                                                                *
  *  This will output the following:                                           *
  *      sqrt(2.0) = 1.4142135623730950                                        *
  *  This has a relative error of 1.570092458683775E-16.                       */
