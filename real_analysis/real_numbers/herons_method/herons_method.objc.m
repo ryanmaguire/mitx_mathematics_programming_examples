@@ -53,8 +53,8 @@
      *      constants in Objective-C. It simply means unsigned.               */
     static const unsigned int maximum_number_of_iterations = 16U;
 
-    /*  The maximum allowed error. This is double precision epsilon.          */
-    static const double epsilon = 2.220446049250313E-16;
+    /*  The maximum allowed error. This is 4x double precision epsilon.       */
+    static const double epsilon = 8.881784197001252E-16;
 
     /*  Computes square roots of positive real numbers via Heron's method.    */
     + (double) sqrt: (double)x
@@ -104,3 +104,14 @@ int main(void)
 
     return 0;
 }
+
+/*  We can run this by installing GCC, which contains an Objective-C          *
+ *  compiler, and GNUStep, which provides the Foundation framework:           *
+ *      https://www.gnustep.org/                                              *
+ *  Once installed, type:                                                     *
+ *      gcc `gnustep-config --objc-flags` herons_method.objc.m -o main \      *
+ *          `gnustep-config --objc-libs` `gnustep-config --base-libs`         *
+ *      ./main                                                                *
+ *  This will output the following:                                           *
+ *      sqrt(2.0) = 1.4142135623730949                                        *
+ *  This has a relative error of 1.570092458683775E-16.                       */
