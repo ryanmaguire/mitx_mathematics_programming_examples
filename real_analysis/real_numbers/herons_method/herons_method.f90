@@ -32,8 +32,8 @@ MODULE HERON
     ! we can halt the algorithm after a few steps.
     INTEGER :: MAXIMUM_NUMBER_OF_ITERATIONS = 16
 
-    ! Maximum allowed error. This is double precision epsilon.
-    REAL :: EPSILON = 2.220446049250313E-16
+    ! Maximum allowed error. This is 4x double precision epsilon.
+    REAL :: EPSILON = 8.881784197001252E-16
 
     CONTAINS
 
@@ -112,3 +112,11 @@ PROGRAM MAIN
     PRINT "(A,F3.1,A,F18.16)", "SQRT(", X, ") = ", SQRT_X
 
 END PROGRAM MAIN
+
+! You can compile this on GNU, Linux, FreeBSD, macOS, Windows, etc., using
+! GNU's Fortran compiler, gfortran. Type:
+!   gfortran -fdefault-real-8 herons_method.f90 -o main
+!   ./main
+! This will output:
+!   SQRT(2.0) = 1.4142135623730949
+! This has a relative error of 1.570092458683775E-16.
