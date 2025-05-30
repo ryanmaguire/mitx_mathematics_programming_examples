@@ -84,3 +84,18 @@ fn void main()
     double sqrt_X = herons_method(X);
     io::printfn("sqrt(%.1f) = %.16f", X, sqrt_X);
 }
+
+/*  We can execute this on GNU, Linux, FreeBSD, macOS, Windows, etc., by      *
+ *  downloading the official C3 compiler, c3c:                                *
+ *      https://c3-lang.org/getting-started/prebuilt-binaries/                *
+ *  Once installed you can compile and run on Windows by typing:              *
+ *      c3c compile herons_method.c3 -o main.exe                              *
+ *      main.exe                                                              *
+ *  This will output the following:                                           *
+ *      sqrt(2.0) = 1.4142135623730949                                        *
+ *  This has a relative error of 1.570092458683775E-16.                       *
+ *                                                                            *
+ *  On every other platform you can do something similar:                     *
+ *      c3c compile herons_method.c3 -o main                                  *
+ *      ./main                                                                *
+ *  This will produce the same output.                                        */
