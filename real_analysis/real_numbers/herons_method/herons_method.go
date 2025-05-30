@@ -41,8 +41,8 @@ func herons_method(x float64) float64 {
      *  Because of this we may exit the function after a few iterations.      */
     const maximum_number_of_iterations uint32 = 16
 
-    /*  The maximum allowed error. This is double precision epsilon.          */
-    const epsilon float64 = 2.220446049250313E-16
+    /*  The maximum allowed error. This is 4x double precision epsilon.       */
+    const epsilon float64 = 8.881784197001252E-16
 
     /*  Variable for keeping track of how many iterations we have performed.  */
     var iters uint32
@@ -85,3 +85,17 @@ func main() {
     var sqrt_x = herons_method(x)
     fmt.Printf("sqrt(%.1f) = %.16f\n", x, sqrt_x)
 }
+
+/*  We can run this on GNU, Linux, FreeBSD, etc., using the GNU Go compiler,  *
+ *  which is part of the GNU Compiler Collection (GCC), via:                  *
+ *      gccgo herons_method.go -o main                                        *
+ *      ./main                                                                *
+ *  This will output the following:                                           *
+ *      sqrt(2.0) = 1.4142135623730949                                        *
+ *  This has a relative error of 1.570092458683775E-16.                       *
+ *                                                                            *
+ *  On macOS and Windows you can install Google's official Go compiler:       *
+ *      https://go.dev/                                                       *
+ *  Once installed you can compile and run by typing:                         *
+ *      go run herons_method.go                                               *
+ *  These will produce the same output.                                       */
