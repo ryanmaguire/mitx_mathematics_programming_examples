@@ -53,8 +53,8 @@ class Heron {
          *  be no naming conflict with std::sqrt, the standard square root.   */
         static double sqrt(double x)
         {
-            /*  The maximum allowed error. This is double precision epsilon.  */
-            const double epsilon = 2.220446049250313E-16;
+            /*  Maximum allowed error. This is 4x double precision epsilon.   */
+            const double epsilon = 8.881784197001252E-16;
 
             /*  Variable for keeping track of the number of iterations.       */
             unsigned int iters;
@@ -101,3 +101,16 @@ int main(void)
 
     return 0;
 }
+
+/*  We can execute this on GNU, Linux, FreeBSD, macOS, etc., via:             *
+ *      c++ herons_method.cpp -o main                                         *
+ *      ./main                                                                *
+ *  This will output the following:                                           *
+ *      sqrt(2.0) = 1.4142135623730949                                        *
+ *  This has a relative error of 1.570092458683775E-16.                       *
+ *                                                                            *
+ *  On Windows you will need to install a C++ compiler. Microsoft's MSVC is a *
+ *  common option. Using MSVC, type:                                          *
+ *      cl herons_method.cpp /link /out:main.exe                              *
+ *      main.exe                                                              *
+ *  This will produce the same output.                                        */
