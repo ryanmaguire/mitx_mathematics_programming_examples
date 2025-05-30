@@ -34,8 +34,8 @@ function heronsMethod(x) {
      *  Because of this we may exit the function after a few iterations.      */
     const MAXIMUM_NUMBER_OF_ITERATIONS = 16;
 
-    /*  The maximum allowed error. This is double precision epsilon.          */
-    const EPSILON = 2.220446049250313E-16;
+    /*  The maximum allowed error. This is 4x double precision epsilon.       */
+    const EPSILON = 8.881784197001252E-16;
 
     /*  Variable for keeping track of how many iterations we have performed.  */
     let iters;
@@ -70,3 +70,12 @@ function heronsMethod(x) {
 const X = 2.0;
 const SQRT_2 = heronsMethod(X);
 console.log("sqrt(2) = " + SQRT_2.toFixed(16));
+
+/*  We can run this outside of a browser by using the cross-platform runtime  *
+ *  environment node.js:                                                      *
+ *      https://nodejs.org/en                                                 *
+ *  After installing, type:                                                   *
+ *      node herons_method.js                                                 *
+ *  This will output:                                                         *
+ *      sqrt(2) = 1.4142135623730949                                          *
+ *  This has a relative error of 1.570092458683775E-16.                       */
