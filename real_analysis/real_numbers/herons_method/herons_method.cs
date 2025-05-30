@@ -91,7 +91,8 @@ class Heron {
  *      main.exe                                                              *
  *  This will output:                                                         *
  *      sqrt(2) = 1.41421356237309                                            *
- *  This has a relative error of 1.570092458683775E-16.                       *
+ *  This has a relative error of 3.611212654972683e-15. Note, csc only prints *
+ *  a double to 15 decimals, the last digit is rounded.                       *
  *                                                                            *
  *  On GNU, Linux, FreeBSD, macOS, etc., you can use the mono C# compiler:    *
  *      mcs herons_method.cs -out:main                                        *
