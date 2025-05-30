@@ -46,8 +46,8 @@ fun heronsMethod(x: Double): Double {
      *  Because of this we may exit the function after a few iterations.      */
     val maximumNumberOfIterations: Int = 16
 
-    /*  The maximum allowed error. This is double precision epsilon.          */
-    val epsilon: Double = 2.220446049250313E-16
+    /*  The maximum allowed error. This is 4x double precision epsilon.       */
+    val epsilon: Double = 8.881784197001252E-16
 
     /*  Set the initial guess to the input. Provided x is positive, Heron's   *
      *  method will indeed converge.                                          */
@@ -80,3 +80,14 @@ fun main() {
     val sqrt_x = heronsMethod(x)
     println("sqrt($x) = $sqrt_x")
 }
+
+/*  We can run this using the Kotlin compiler, kotlinc:                       *
+ *      https://github.com/JetBrains/kotlin/releases                          *
+ *  See also:                                                                 *
+ *      https://kotlinlang.org/                                               *
+ *  You will also need to install Java OpenJDK. Once done, type:              *
+ *      kotlinc herons_method.kt -d herons_method.jar                         *
+ *      java -jar herons_method.jar                                           *
+ *  This will output:                                                         *
+ *      sqrt(2.0) = 1.414213562373095                                         *
+ *  This has a relative error of 1.570092458683775E-16.                       */
