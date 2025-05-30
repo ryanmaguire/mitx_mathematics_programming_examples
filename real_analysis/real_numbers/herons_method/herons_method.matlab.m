@@ -45,8 +45,8 @@ function approximate_root = herons_method(x)
     % Because of this we may exit the function after a few iterations.
     maximum_number_of_iterations = 16;
 
-    % The maximum allowed error. This is double precision epsilon.
-    epsilon = 2.220446049250313E-16;
+    % The maximum allowed error. This is 4x double precision epsilon.
+    epsilon = 8.881784197001252E-16;
 
     % Set the initial guess to the input. Provided x is positive, Heron's
     % method will indeed converge.
@@ -73,3 +73,12 @@ end
 x = 2.0;
 sqrt_x = herons_method(x);
 printf("sqrt(%.1f) = %.16f\n", x, sqrt_x);
+
+% We can run this using GNU Octave, a free and open source
+% alternative to MATLAB:
+%   https://octave.org/download
+% Once installed, type:
+%   octave herons_method.matlab.m
+% This outputs:
+%   sqrt(2.0) = 1.4142135623730949
+% This has a relative error of 1.570092458683775E-16.
