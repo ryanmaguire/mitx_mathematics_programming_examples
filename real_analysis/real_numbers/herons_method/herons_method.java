@@ -34,8 +34,8 @@ final public class Heron {
      *  Because of this we may exit the function after a few iterations.      */
     static private final int maximum_number_of_iterations = 16;
 
-    /*  The maximum allowed error. This is double precision epsilon.          */
-    static private final double epsilon = 2.220446049250313E-16;
+    /*  The maximum allowed error. This is 4x double precision epsilon.       */
+    static private final double epsilon = 8.881784197001252E-16;
 
     /*  Function for computing the square root of a positive real number      *
      *  using Heron's method.                                                 */
@@ -73,6 +73,14 @@ final public class Heron {
         /*  Test out Heron's method by computing sqrt(2).                     */
         final double x = 2.0;
         final double sqrt_x = Heron.heronsMethod(x);
-        System.out.printf("sqrt(%f) = %.16f\n", x, sqrt_x);
+        System.out.printf("sqrt(%.1f) = %.16f\n", x, sqrt_x);
     }
 }
+
+/*  We can execute this on GNU, Linux, FreeBSD, macOS, Windows, etc., using   *
+ *  OpenJDK. After installing, type:                                          *
+ *      java herons_method.java                                               *
+ *      ./main                                                                *
+ *  This will output the following:                                           *
+ *      sqrt(2.0) = 1.4142135623730950                                        *
+ *  This has a relative error of 1.570092458683775E-16.                       */
