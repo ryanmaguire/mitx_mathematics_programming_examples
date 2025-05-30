@@ -97,7 +97,7 @@ int main()
  *                                                                            *
  *  On macOS and Windows you can install the official D compiler, DMD:        *
  *      https://dlang.org/download.html                                       *
- *  Once installed you can compile and run on Windows by typying:             *
+ *  Once installed you can compile and run on Windows by typing:              *
  *      dmd herons_method.d -of=main.exe                                      *
  *      main.exe                                                              *
  *  On macOS you can do something similar:                                    *
