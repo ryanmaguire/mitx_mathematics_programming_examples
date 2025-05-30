@@ -38,8 +38,8 @@ pure nothrow @safe @nogc
      *  Because of this we may exit the function after a few iterations.      */
     const uint maximum_number_of_iterations = 16U;
 
-    /*  The maximum allowed error. This is double precision epsilon.          */
-    const double epsilon = 2.220446049250313E-16;
+    /*  The maximum allowed error. This is 4x double precision epsilon.       */
+    const double epsilon = 8.881784197001252E-16;
 
     /*  Variable for keeping track of how many iterations we have performed.  */
     uint iters;
@@ -86,3 +86,21 @@ int main()
 
     return 0;
 }
+
+/*  We can run this on GNU, Linux, FreeBSD, etc., using the GNU D compiler,   *
+ *  which is part of the GNU Compiler Collection (GCC), via:                  *
+ *      gdc herons_method.d -o main                                           *
+ *      ./main                                                                *
+ *  This will output the following:                                           *
+ *      sqrt(2.0) = 1.4142135623730949                                        *
+ *  This has a relative error of 1.570092458683775E-16.                       *
+ *                                                                            *
+ *  On macOS and Windows you can install the official D compiler, DMD:        *
+ *      https://dlang.org/download.html                                       *
+ *  Once installed you can compile and run on Windows by typying:             *
+ *      dmd herons_method.d -of=main.exe                                      *
+ *      main.exe                                                              *
+ *  On macOS you can do something similar:                                    *
+ *      dmd herons_method.d -of=main                                          *
+ *      ./main                                                                *
+ *  These will produce the same output.                                       */
