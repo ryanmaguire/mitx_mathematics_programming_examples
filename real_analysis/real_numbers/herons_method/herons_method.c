@@ -45,8 +45,8 @@ static double herons_method(double x)
      *      constants in C. It simply means unsigned.                         */
     const unsigned int maximum_number_of_iterations = 16U;
 
-    /*  The maximum allowed error. This is double precision epsilon.          */
-    const double epsilon = 2.220446049250313E-16;
+    /*  The maximum allowed error. This is 4x double precision epsilon.       */
+    const double epsilon = 8.881784197001252E-16;
 
     /*  Variable for keeping track of how many iterations we have performed.  */
     unsigned int iters;
@@ -90,3 +90,17 @@ int main(void)
 
     return 0;
 }
+
+/*  We can execute this on GNU, Linux, FreeBSD, macOS, etc., via:             *
+ *      cc herons_method.c -o main                                            *
+ *      ./main                                                                *
+ *  This will output the following:                                           *
+ *      sqrt(2.0) = 1.4142135623730949                                        *
+ *  This has a relative error of 1.570092458683775E-16.                       *
+ *                                                                            *
+ *  On Windows you will need to install a C compiler. Common options are      *
+ *  Microsoft's MSVC, LLVM's clang, MinGW (which uses the GNU toolchain),     *
+ *  or installing Cygwin and running the commands above. Using MSVC, type:    *
+ *      cl herons_method.c /link /out:main.exe                                *
+ *      main.exe                                                              *
+ *  This will produce the same output.                                        */
