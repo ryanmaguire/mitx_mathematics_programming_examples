@@ -89,3 +89,17 @@ BEGIN
     WriteLn('sqrt(', Value:0:1, ') = ', SqrtValue:0:16);
 
 END.
+
+(*  We can compile this using the Free Pascal Compiler (fpc):                 *
+ *      https://www.freepascal.org/                                           *
+ *  Once installed, on GNU, Linux, FreeBSD, macOS, etc., this can be run by:  *
+ *      fpc herons_method.pas -omain                                          *
+ *      ./main                                                                *
+ *  This outputs:                                                             *
+ *      sqrt(2.0) = 1.4142135623730949                                        *
+ *  The relative error is 1.570092458683775E-16.                              *
+ *                                                                            *
+ *  On Windows, type:                                                         *
+ *      fpc herons_method.pas -omain.exe                                      *
+ *      main.exe                                                              *
+ *  This produces the same output.                                            *)

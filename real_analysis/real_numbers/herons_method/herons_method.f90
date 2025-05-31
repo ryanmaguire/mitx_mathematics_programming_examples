@@ -113,10 +113,19 @@ PROGRAM MAIN
 
 END PROGRAM MAIN
 
-! You can compile this on GNU, Linux, FreeBSD, macOS, Windows, etc., using
+! You can compile this on GNU, Linux, FreeBSD, macOS, etc., using
 ! GNU's Fortran compiler, gfortran. Type:
 !   gfortran -fdefault-real-8 herons_method.f90 -o main
 !   ./main
 ! This will output:
 !   SQRT(2.0) = 1.4142135623730949
 ! This has a relative error of 1.570092458683775E-16.
+!
+! On Windows you can also use gfortran by installing MSYS2:
+!   https://www.msys2.org/
+! Along with mingw-w64:
+!   https://www.mingw-w64.org/getting-started/msys2/
+! Once gfortan is installed, you can type:
+!   gfortran -fdefault-real-8 herons_method.f90 -o main.exe
+!   main.exe
+! This will produce the same output.

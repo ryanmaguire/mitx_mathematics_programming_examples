@@ -91,3 +91,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# We can run this using the standard Python implementation, C-Python:
+#   https://www.python.org/downloads/
+# Once installed, run:
+#   python3 herons_method.py
+# Depending on your platform you may need to replace "python3" with "python"
+# or "py" or "py3". This will output:
+#   sqrt(2.0) = 1.414213562373095
+# This has relative error 1.570092458683775E-16.

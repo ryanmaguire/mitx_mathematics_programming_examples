@@ -98,4 +98,4 @@ func main() {
  *      https://go.dev/                                                       *
  *  Once installed you can compile and run by typing:                         *
  *      go run herons_method.go                                               *
- *  These will produce the same output.                                       */
+ *  This will produce the same output.                                        */

@@ -67,3 +67,11 @@ x_val <- 2.0
 sqrt_2 <- herons_method(x_val)
 output <- sprintf("sqrt(%.1f) = %.16f", x_val, sqrt_2)
 message(output)
+
+# We can run this by installing R.
+#   https://www.r-project.org/
+# Once installed, type:
+#   Rscript herons_method.r
+# This will output:
+#   sqrt(2.0) = 1.4142135623730949
+# This has relative error 1.570092458683775E-16.
