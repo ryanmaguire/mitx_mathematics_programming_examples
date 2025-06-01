@@ -106,7 +106,7 @@ int main(void)
 }
 
 /*  We can run this by installing GCC, which contains an Objective-C          *
- *  compiler, and GNUStep, which provides the Foundation framework:           *
+ *  compiler, and GNUstep, which provides the Foundation framework:           *
  *      https://www.gnustep.org/                                              *
  *  Once installed, type:                                                     *
  *      gcc `gnustep-config --objc-flags` herons_method.objc.m -o main \      *
@@ -114,4 +114,20 @@ int main(void)
  *      ./main                                                                *
  *  This will output the following:                                           *
  *      sqrt(2.0) = 1.4142135623730949                                        *
- *  This has a relative error of 1.570092458683775E-16.                       */
+ *  This has a relative error of 1.570092458683775E-16.                       *
+ *                                                                            *
+ *  On Windows this is a bit more complicated. Setup MSYS2 and MinGW-w64:     *
+ *      https://www.msys2.org/                                                *
+ *      https://www.mingw-w64.org/getting-started/msys2/                      *
+ *  Then follow the steps to install GCC and GNUstep:                         *
+ *      https://mediawiki.gnustep.org/index.php/Installation_MSYS2            *
+ *  Once installed, make sure the GNUstep Tools directory is in your DLL path *
+ *  and then type:                                                            *
+ *      gcc -IC:\msys64\mingw64\Local\Library\Headers   ^                     *
+ *          -LC:\msys64\mingw64\Local\Library\Libraries ^                     *
+ *          herons_method.objc.m -o main.exe -lobjc -lgnustep-base            *
+ *      main.exe                                                              *
+ *  This will produce the same result. Windows users can also try using the   *
+ *  GNUstep Windows MSVC Toolschain:                                          *
+ *      https://github.com/gnustep/tools-windows-msvc                         *
+ *  Once installed you can compile Objective-C code from the command line.    */
