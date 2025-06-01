@@ -90,4 +90,9 @@ fun main() {
  *      java -jar herons_method.jar                                           *
  *  This will output:                                                         *
  *      sqrt(2.0) = 1.414213562373095                                         *
- *  This has a relative error of 1.570092458683775E-16.                       */
+ *  This has a relative error of 1.570092458683775E-16.                       *
+ *                                                                            *
+ *  On Windows you can install kotlinc-native from the same link. Type:       *
+ *      kotlinc-native herons_method.kt -output main.exe                      *
+ *      main.exe                                                              *
+ *  This produces the same output.                                            */
