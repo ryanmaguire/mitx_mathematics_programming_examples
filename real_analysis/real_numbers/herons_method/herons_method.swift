@@ -68,3 +68,17 @@ func heronsMethod(x: Double) -> Double {
 let x: Double = 2.0
 let sqrt_x: Double = heronsMethod(x: x)
 print("sqrt(\(x)) = \(sqrt_x)")
+
+/*  We can run this using the standard swift compiler, swiftc:                *
+ *      https://www.swift.org/install/                                        *
+ *  After installing, on GNU, Linux, or macOS, type:                          *
+ *      swiftc herons_method.swift -o main                                    *
+ *      ./main                                                                *
+ *  This will output the following:                                           *
+ *      sqrt(2.0) = 1.414213562373095                                         *
+ *  This has a relative error of 1.570092458683775E-16.                       *
+ *                                                                            *
+ *  On Windows, type:                                                         *
+ *      swiftc herons_method.swift -o main.exe                                *
+ *      main.exe                                                              *
+ *  This will produce the same output.                                        */
