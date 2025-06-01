@@ -75,3 +75,17 @@ fn main()
     let sqrt_x: f64 = herons_method(x);
     println!("sqrt({}) = {}", x, sqrt_x);
 }
+
+/*  We can run this by installing the standard rust compiler, rustc:          *
+ *      https://www.rust-lang.org/tools/install                               *
+ *  On GNU, Linux, FreeBSD, macOS, etc., we can run this by typing:           *
+ *      rustc herons_method.rs -o main                                        *
+ *      ./main                                                                *
+ *  This will output the following:                                           *
+ *      sqrt(2.0) = 1.414213562373095                                         *
+ *  This has a relative error of 1.570092458683775E-16.                       *
+ *                                                                            *
+ *  On Windows, type:                                                         *
+ *      rustc herons_method.rs -o main.exe                                    *
+ *      main.exe                                                              *
+ *  This will produce the same output.                                        */
