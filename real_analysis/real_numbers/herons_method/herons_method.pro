@@ -77,3 +77,13 @@ PRO MAIN
     PRINT, X, SQRT_2, FORMAT = 'SQRT(%3.1f) = %18.16f'
 
 END
+
+; We can run this by installing the GNU Data Language (GDL), which is
+; a free and open source alternative to IDL:
+;   https://gnudatalanguage.github.io/
+; Once installed, start GDL by typing gdl. Once running, type:
+;   GDL> .compile herons_method.pro
+;   GDL> main
+; This will produce the following output:
+;   SQRT(2.0) = 1.4142135623730949
+; The relative error is 1.570092458683775E-16.
