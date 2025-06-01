@@ -71,3 +71,13 @@ const X: number = 2.0;
 const SQRT_2: number = heronsMethod(X);
 const output: string = "sqrt(2) = " + SQRT_2.toFixed(16);
 console.log(output);
+
+/*  We can run this by installing node.js and tsx:                            *
+ *      https://nodejs.org/en                                                 *
+ *  Using the node package manager (npm), install tsx by typing:              *
+ *      npm install -g tsx                                                    *
+ *  Run the file by typing:                                                   *
+ *      npx tsx herons_method.ts                                              *
+ *  This will output the following:                                           *
+ *      sqrt(2.0) = 1.4142135623730949                                        *
+ *  This has a relative error of 1.570092458683775E-16.                       */
