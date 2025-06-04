@@ -35,7 +35,7 @@ herons_method <- function(x) {
     maximum_number_of_iterations <- 16
 
     # The maximum allowed error. This is double precision epsilon.
-    epsilon = 2.220446049250313E-16
+    epsilon <- 2.220446049250313E-16
 
     # Set the initial guess to the input. Provided x is positive, Heron's
     # method will indeed converge.
