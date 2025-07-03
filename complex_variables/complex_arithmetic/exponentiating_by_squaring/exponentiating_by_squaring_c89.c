@@ -95,18 +95,19 @@ static void square_self(struct complex_number * const z)
 }
 
 /*  Computes the product of two complex numbers, storing the result in the    *
- *  first variable. This acts as the *= operator for real numbers.            */
+ *  first variable. This acts as the *= operator for complex numbers.         */
 static void
 multiply_by(struct complex_number * const z,
             const struct complex_number * const w)
 {
-    /*  Similar to the square_self function, save the real part of z as a new *
-     *  variable to avoid overwriting and messing up the computation.         */
+    /*  Similar to the square_self function, save the real parts of z and w   *
+     *  as new variables to avoid overwriting and messing up the computation. */
     const double z_real = z->real;
+    const double w_real = w->real;
 
     /*  To multiply, use (a + ib)*(c + id) = (ac - bd) + i(ad + bc).          */
-    z->real = z->real * w->real - z->imag * w->imag;
-    z->imag = z_real * w->imag + z->imag * w->real;
+    z->real = z_real * w_real - z->imag * w->imag;
+    z->imag = z_real * w->imag + z->imag * w_real;
 }
 
 /*  Computes powers of a given complex number by repeatedly squaring.         */
