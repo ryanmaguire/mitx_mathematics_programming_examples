@@ -60,19 +60,32 @@ def exp_by_squaring(z, n):
 
     scale = 1.0
 
-    # Loop through and keep squaring.
+    # Start the process. Compute z^n by removing all of the even factors
+    # for n, iteratively updating the output along the way.
     while n > 1:
 
-        # Check if n is odd. The % symbol lets us compute n mod 2.
-        # Here we must compute x^(2n+1) = x^(2n) * x.
+        # If n is odd, n = 2*k+1, and if w = output, then:
+        #
+        #        n    2k + 1
+        #       w  = w
+        #
+        #             -  2 -  n
+        #          = | w    |   * w
+        #             -    -
+        #
+        # Multiply "scale" by "output" to handle the "* w" on the right
+        # side of the expression. We can continue squaring, replacing
+        # output with output^2, to handle portion of this expression that
+        # is inside of the parentheses.
         if n % 2 == 1:
             scale *= output
             n -= 1
 
-        # Compute another square and cut n in half.
+        # n is now even. Square the output and divide n by two.
         output *= output
         n >>= 1
 
+    # n is now 1. The final output is output * scale. Compute this.
     return output * scale
 
 # Test our function with a short program.
