@@ -108,13 +108,12 @@
          *  overwriting the data, we must first save the real component as a  *
          *  new variable. That is, if we naively do:                          *
          *                                                                    *
-         *      z->real = z->real*z->real - z->imag*z->imag;                  *
-         *      z->imag = 2.0 * z->real * z->imag;                            *
+         *      real = real * real - imag * imag;                             *
+         *      imag = 2.0 * real * imag;                                     *
          *                                                                    *
-         *  Then z->imag will have the wrong value! This is because we        *
-         *  changed z->real first, and then used the incorrect real part for  *
-         *  the computation of the imaginary part. Save z->real as a new      *
-         *  variable to prevent this.                                         */
+         *  Then imag will have the wrong value! This is because we changed   *
+         *  real first, and then used the incorrect real part for the         *
+         *  computation of the imaginary part. Save real to prevent this.     */
         const double z_real = real;
 
         /*  We can now safely update our complex number to its square.        */
@@ -126,13 +125,14 @@
      *  the first variable. This acts as the *= operator for real numbers.    */
     - (void) multiplyBy: (const Complex * const) other
     {
-        /*  Similar to the squareSelf function, save the real part of z as a  *
-         *  new variable to avoid overwriting and ruining the computation.    */
+        /*  Similar to squareSelf, save the real parts of z and w as new      *
+         *  variables to avoid overwriting and ruining the computation.       */
         const double z_real = real;
+        const double w_real = other->real;
 
         /*  To multiply, use (a + ib)*(c + id) = (ac - bd) + i(ad + bc).      */
-        real = real * other->real - imag * other->imag;
-        imag = z_real * other->imag + imag * other->real;
+        real = z_real * w_real - imag * other->imag;
+        imag = z_real * other->imag + imag * w_real;
     }
 
     /*  Computes powers of a given complex number by repeatedly squaring.     */
