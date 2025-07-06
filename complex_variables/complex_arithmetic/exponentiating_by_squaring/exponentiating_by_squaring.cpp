@@ -33,7 +33,7 @@
 /*  Print a complex number in standard form, x + y*i.                         */
 static void print_complex(std::complex<double> z)
 {
-    /*  We can use printfn with the correct format specifiers to do the job.  */
+    /*  We can use printf with the correct format specifiers to do the job.   */
     std::printf("%.16E + %.16E*i\n", z.real(), z.imag());
 }
 
@@ -50,9 +50,8 @@ static std::complex<double> exp_by_squaring(std::complex<double> z, int n)
     std::complex<double> scale = std::complex<double>(1.0, 0.0);
 
     /*  Special case. If n = 0, then z^0 = 1, by definition. Return 1.        */
-    if (n == 0) {
+    if (n == 0)
         return scale;
-    }
 
     /*  For negative powers use z^n = (1 / z)^(-n) to reduce n to positive.   */
     if (n < 0)
@@ -93,12 +92,42 @@ static std::complex<double> exp_by_squaring(std::complex<double> z, int n)
     return output * scale;
 }
 
+/*  Let's extend the complex<double> class by providing the "^" operator.     */
+class Complex : public std::complex<double> {
+    public:
+
+        /*  Constructor from real and imaginary parts, z = x + iy.            */
+        Complex(double real, double imag) : std::complex<double>(real, imag)
+        {
+            /*  Nothing to do, simply inherit the std::complex constructor.   */
+        }
+
+        /*  Constructor from a complex number, z = w.                         */
+        Complex(const std::complex<double>& other) : std::complex<double>(other)
+        {
+            /*  Similarly, we do not need to add more functionality.          */
+        }
+
+        /*  Provide the "^" operator for complex numbers. We can then write   *
+         *  something like w = z^n, instead of w = exp_by_squaring(z, n).     */
+        Complex operator ^ (int n) const
+        {
+            return Complex(exp_by_squaring(*this, n));
+        }
+
+        /*  Provide the print function as a method for the class.             */
+        void print(void) const
+        {
+            print_complex(*this);
+        }
+};
+
 /*  Test our routines by computing 1 / (1 + i)^30.                            */
 int main(void)
 {
-    const int power = -30;
-    const std::complex<double> z = std::complex<double>(1.0, 1.0);
-    const std::complex<double> z_pow = exp_by_squaring(z, power);
-    print_complex(z_pow);
+    const int n = -30;
+    const Complex z = Complex(1.0, 1.0);
+    const Complex w = z^n;
+    w.print();
     return 0;
 }
