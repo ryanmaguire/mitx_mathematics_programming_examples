@@ -29,6 +29,9 @@
 #ifndef HEAVISIDE_FEYNMAN_H
 #define HEAVISIDE_FEYNMAN_H
 
+/*  typedef for the function types that perform the error tests.              */
+typedef double (*error_test)(double, double, unsigned int);
+
 /******************************************************************************
  *  Function:                                                                 *
  *      distance                                                              *
@@ -190,12 +193,9 @@ extern double newton_error(double rho, double time, unsigned int iters);
  ******************************************************************************/
 extern double halley_error(double rho, double time, unsigned int iters);
 
-/*  typedef for the function types that perform the error tests.              */
-typedef double (*error_test)(double, double, unsigned int);
-
 /******************************************************************************
  *  Function:                                                                 *
- *      run_test                                                              *
+ *      run_error_test                                                        *
  *  Purpose:                                                                  *
  *      Computes the error in the retarded time from a given numerical method *
  *      (Halley or Newton) after 0, 1, 2, 3, and 4 iterations against the     *
@@ -208,7 +208,22 @@ typedef double (*error_test)(double, double, unsigned int);
  *  Output:                                                                   *
  *      None (void).                                                          *
  ******************************************************************************/
-extern void run_test(error_test test, double rho, const char * filename);
+extern void run_error_test(error_test test, double rho, const char * filename);
+
+/******************************************************************************
+ *  Function:                                                                 *
+ *      run_time_test                                                         *
+ *  Purpose:                                                                  *
+ *      Calculates how long a given method takes.                             *
+ *  Arguments:                                                                *
+ *      test (error_test):                                                    *
+ *          The method for the test (Halley or Newton).                       *
+ *      iters (unsigned int):                                                 *
+ *          The number of iterations to perform.                              *
+ *  Output:                                                                   *
+ *      None (void).                                                          *
+ ******************************************************************************/
+extern void run_time_test(error_test test, unsigned int iters);
 
 #endif
 /*  End of include guard.                                                     */
