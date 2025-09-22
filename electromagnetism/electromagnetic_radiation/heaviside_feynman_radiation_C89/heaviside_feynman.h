@@ -193,8 +193,22 @@ extern double halley_error(double rho, double time, unsigned int iters);
 /*  typedef for the function types that perform the error tests.              */
 typedef double (*error_test)(double, double, unsigned int);
 
-/*  Function for performing error tests and writing them to a file.           */
-extern void run_test(error_test test, const char * filename);
+/******************************************************************************
+ *  Function:                                                                 *
+ *      run_test                                                              *
+ *  Purpose:                                                                  *
+ *      Computes the error in the retarded time from a given numerical method *
+ *      (Halley or Newton) after 0, 1, 2, 3, and 4 iterations against the     *
+ *      the actual retarded time, and prints the output to a file.            *
+ *  Arguments:                                                                *
+ *      test (error_test):                                                    *
+ *          The method for the test (Halley or Newton).                       *
+ *      filename (const char *):                                              *
+ *          The name of the CSV file the output is written to.                *
+ *  Output:                                                                   *
+ *      None (void).                                                          *
+ ******************************************************************************/
+extern void run_test(error_test test, double rho, const char * filename);
 
 #endif
 /*  End of include guard.                                                     */
