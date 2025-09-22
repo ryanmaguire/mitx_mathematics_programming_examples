@@ -140,7 +140,7 @@ double newton(double rho, double time, double guess)
      *  This is the denominator for Newton's method.                          */
     const double deriv = 1.0 + sin_tr * cos_tr / dist;
 
-    /*  Return the Newton iterator, t0 - f(t0) / f'(t0).                      */
+    /*  Return the Newton iterate, t0 - f(t0) / f'(t0).                       */
     return guess - func / deriv;
 }
 /*  End of newton.                                                            */
