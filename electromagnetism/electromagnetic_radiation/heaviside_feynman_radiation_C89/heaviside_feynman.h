@@ -150,29 +150,9 @@ extern double past_halley(double rho, double time, unsigned int iters);
 
 /******************************************************************************
  *  Function:                                                                 *
- *      past_halley                                                           *
+ *      newton_error                                                          *
  *  Purpose:                                                                  *
- *      Given a point in the xy plane and the time at this point, this        *
- *      computes the retarded time for a charge oscillating in the z axis by  *
- *      iteratively applying Halley's method.                                 *
- *  Arguments:                                                                *
- *      rho (double):                                                         *
- *          The distance from the point to the origin.                        *
- *      time (double):                                                        *
- *          The time for the point in the plane.                              *
- *      iters (unsigned int):                                                 *
- *          The number of iterations that will be performed.                  *
- *  Output:                                                                   *
- *      retarded_time (double):                                               *
- *          The time for the oscillating charge.                              *
- ******************************************************************************/
-extern double past_halley(double rho, double time, unsigned int iters);
-
-/******************************************************************************
- *  Function:                                                                 *
- *      newton_test                                                           *
- *  Purpose:                                                                  *
- *      This functions tests whether or not Newton's method converged after a *
+ *      This function tests whether or not Newton's method converged after a  *
  *      few iterations. If it did, the output of the past_newton function is  *
  *      the actual retarded time for the moving charge. If it did not, we     *
  *      have an error and need to correct this.                               *
@@ -181,17 +161,19 @@ extern double past_halley(double rho, double time, unsigned int iters);
  *          The distance from the point to the origin.                        *
  *      time (double):                                                        *
  *          The time for the point in the plane.                              *
+ *      iters (unsigned int):                                                 *
+ *          The number of iterations that will be performed.                  *
  *  Output:                                                                   *
  *      error (double):                                                       *
- *          The error in Newton's method. Ideally, this is zero.              *
+ *          The error in Newton's method. Ideally, this is close to zero.     *
  ******************************************************************************/
-extern double newton_test(double rho, double time);
+extern double newton_error(double rho, double time, unsigned int iters);
 
 /******************************************************************************
  *  Function:                                                                 *
- *      halley_test                                                           *
+ *      halley_error                                                          *
  *  Purpose:                                                                  *
- *      This functions tests whether or not Halley's method converged after a *
+ *      This function tests whether or not Halley's method converged after a  *
  *      few iterations. If it did, the output of the past_halley function is  *
  *      the actual retarded time for the moving charge. If it did not, we     *
  *      have an error and need to correct this.                               *
@@ -200,11 +182,19 @@ extern double newton_test(double rho, double time);
  *          The distance from the point to the origin.                        *
  *      time (double):                                                        *
  *          The time for the point in the plane.                              *
+ *      iters (unsigned int):                                                 *
+ *          The number of iterations that will be performed.                  *
  *  Output:                                                                   *
  *      error (double):                                                       *
- *          The error in Halley's method. Ideally, this is zero.              *
+ *          The error in Halley's method. Ideally, this is close to zero.     *
  ******************************************************************************/
-extern double halley_test(double rho, double time);
+extern double halley_error(double rho, double time, unsigned int iters);
+
+/*  typedef for the function types that perform the error tests.              */
+typedef double (*error_test)(double, double, unsigned int);
+
+/*  Function for performing error tests and writing them to a file.           */
+extern void run_test(error_test test, const char * filename);
 
 #endif
 /*  End of include guard.                                                     */
