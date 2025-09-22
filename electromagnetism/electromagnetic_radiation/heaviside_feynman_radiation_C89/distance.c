@@ -64,7 +64,7 @@
 /*  Function prototype / forward declaration provided here.                   */
 #include "heaviside_feynman.h"
 
-/*  Trigonometric functions, like sine, are found here.                       */
+/*  Trigonometric functions and the square root function are found here.      */
 #include <math.h>
 
 /*  Function for computing the distance from a point to an oscillating charge.*/
@@ -83,6 +83,6 @@ double distance(double rho, double retarded_time)
 
     /*  By Pythagoras, the Euclidean distance is the square root of the sum   *
      *  of the squares. Return this value.                                    */
-    return sqrt(rho_squared * height_squared);
+    return sqrt(rho_squared + height_squared);
 }
 /*  End of distance.                                                          */
