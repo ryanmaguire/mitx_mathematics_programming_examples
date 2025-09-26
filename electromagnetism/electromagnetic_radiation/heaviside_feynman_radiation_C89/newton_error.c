@@ -29,13 +29,18 @@
  *          The distance from the point to the origin.                        *
  *      time (double):                                                        *
  *          The time for the point in the plane.                              *
+ *      iters (unsigned int):                                                 *
+ *          The number of iterations used for Newton's method.                *
  *  Output:                                                                   *
  *      error (double):                                                       *
  *          The error in Newton's method. Ideally, this is close to zero.     *
  *  Called Functions:                                                         *
  *      heaviside_feynman.h:                                                  *
- *          newton:                                                           *
- *              Computes the Newton iterate for the retarded time.            *
+ *          past_newton:                                                      *
+ *              Computes retarded time (past time) using Newton's method.     *
+ *          distance:                                                         *
+ *              Computes the distance between the source charge at the        *
+ *              retarded time and the observation point at the current time.  *
  *  Method:                                                                   *
  *      Compute t_r - t + distance / c (but we set c = 1, for simplicity).    *
  ******************************************************************************
