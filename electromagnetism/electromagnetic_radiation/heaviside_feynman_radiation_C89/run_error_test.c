@@ -28,7 +28,7 @@
 #include <stdio.h>
 
 /*  Function for testing one of the numerical methods for retarded time.      */
-extern void run_error_test(error_test test, double rho, const char * filename)
+void run_error_test(error_test test, double rho, const char * filename)
 {
     /*  The point charge oscillated with period 2 pi. We'll run the test over *
      *  an equally sampled data set over this interval.                       */
@@ -72,4 +72,4 @@ extern void run_error_test(error_test test, double rho, const char * filename)
     /*  We're done writing to the file, close it.                             */
     fclose(fp);
 }
-/*  End of run_test.                                                          */
+/*  End of run_error_test.                                                    */
