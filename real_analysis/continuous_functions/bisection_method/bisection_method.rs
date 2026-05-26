@@ -140,5 +140,5 @@ fn main() {
     /*  Compute pi using bisection. We should get pi = 3.14159..., accurate   *
      *  to about 16 decimals.                                                 */
     let pi: f64 = bisection_method(f64::sin, A, B);
-    println!("pi( = {}", pi);
+    println!("pi = {}", pi);
 }
